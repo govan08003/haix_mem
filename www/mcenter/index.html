@@ -4,9 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>做一個萬用首頁</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
 </head>
 <body>
-  Hollow.js
+  <div id="app">
+    {{ message }}
+    <div v-text="message"></div>
+    <div v-html="myHtml"></div>
+    <a :href="fb.link" :title="fb.title">{{fb.text}}</a>
+  </div>
 </body>
+
+
+<script type="text/javascript">
+  var app = new Vue({
+    el:'#app',
+    data: {
+      fb: {
+        text: 'Facebook',
+        title: 'Facebook',
+        link: 'https://www.facebook.com/',
+        img: '123'
+      },
+      message: 'HAAAAAAAIX',
+      myHtml:'<div><h1>1234</h1></div>',
+      link:'https://www.facebook.com/'
+    }
+  })
+</script>
 </html>
